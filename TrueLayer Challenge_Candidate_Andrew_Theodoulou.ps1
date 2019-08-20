@@ -16,8 +16,10 @@ $pid | out-file 'C:\Test\TrueLayer\TLTest.txt' -Append
 (Get-WmiObject -class "Win32_PhysicalMemoryArray").MaxCapacity | Out-File 'C:\Test\TrueLayer\TLTest.txt' -Append
 
 #IP
-[string] ((test-connection -Count 1 $env:computername).IPV4Address) | Out-File 'C:\Test\TrueLayer\TLTest.txt' -Append
+(Invoke-WebRequest -uri "http://ifconfig.me/ip").Content | Out-File 'C:\Test\TrueLayer\TLTest.txt' -Append 
 
 #List files and folders
 Get-ChildItem -Recurse 'C:\Test' | Out-File 'C:\Test\TrueLayer\TLTest.txt' -Append
 
+#Comment with a comma
+"This is your comment, to show proof with a comma" | Out-File 'C:\Test\TrueLayer\TLTest.txt' -Append
