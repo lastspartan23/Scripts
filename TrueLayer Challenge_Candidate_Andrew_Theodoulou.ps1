@@ -22,4 +22,4 @@ $pid | out-file 'C:\Test\TrueLayer\TLTest.txt' -Append
 Get-ChildItem -Recurse 'C:\Test' | Out-File 'C:\Test\TrueLayer\TLTest.txt' -Append
 
 #Comment with a comma
-"This is your comment, to show proof with a comma" | Out-File 'C:\Test\TrueLayer\TLTest.txt' -Append
+"File Opened @ $(Get-Date -Format "HH:mm")," | Out-File 'C:\Test\TrueLayer\TLTest.txt' -Append
